@@ -1,5 +1,5 @@
 # Async-FIFO
-In this project,multi bit synchronization between different Clock domains is done using ASynchronous FIFOs.You can find the source and simulation files in their respective directory.
+In this project,multi bit synchronization between different Clock domains is done using ASynchronous FIFOs.You can find the source and simulation files in their respective directory.Thanks to sunburst design,their [Clock domain crossing design & verification Techniques using System Verilog](http://www.sunburst-design.com/papers/CummingsSNUG2008Boston_CDC.pdf)  is the base for this project. 
 
 # Clock Domain Crossing
 CDC refers to the transfer of data signals from one clock domain to another, where each domain operates on its own clock signal. When data needs to be transferred between these clock domains, it's necessary to ensure that the data is correctly synchronized to the receiving clock domain to avoid data corruption or incorrect processing.
