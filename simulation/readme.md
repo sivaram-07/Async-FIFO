@@ -1,6 +1,7 @@
 # TESTBENCH
 
-The data WIDTH is choosen as 8 and fifo-DEPTH is choosen as 16.A sequntial data(1,2...32) is generated and given to the wdata port. And rstn_n is used to reset the read&write pointer and asserting the empty flag.The read and write clock are created and can be changed to a different value as well.
+The data WIDTH is choosen as 8 and fifo-DEPTH is choosen as 16.A random data is generated and given to the wdata port. And rstn_n is used to reset the read&write pointer and asserting the empty flag.The read and write clock are created and its time period can be changed to a different value as well.
+A FIFO QUEUE is created and used for verifying the operation of fifo.
 
 # OUTPUTS
 
