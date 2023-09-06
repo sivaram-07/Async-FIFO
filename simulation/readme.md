@@ -4,12 +4,14 @@ The data WIDTH is choosen as 8 and fifo-DEPTH is choosen as 16.A sequntial data(
 
 # OUTPUTS
 
-![image](https://github.com/sivaram-07/Async-FIFO/assets/114935240/d9a8a3a5-be3c-40fb-b891-89761bcce17d)
+![image](https://github.com/sivaram-07/Async-FIFO/assets/114935240/6ae8da79-b1c4-48fc-a7bb-f3889fbb73ce)
+
 
 You can notice a three cycle delay in de-asserting the empty flag which is due to the fact that the change in write-pointer value will reflect only after three cycles in the read-clock domain.
 
 
-![image](https://github.com/sivaram-07/Async-FIFO/assets/114935240/1f0f1912-e913-4981-b906-06b37791d139)
+![image](https://github.com/sivaram-07/Async-FIFO/assets/114935240/f2bf0ff1-ee6d-41da-bae5-44ec7a53105b)
+
 
 
 And all the values sent by the write clock domain is received and synchronized with the read clock.
