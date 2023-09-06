@@ -7,6 +7,9 @@ logic w_clk,r_clk,rst_n,wr_rq,rd_rq,full,empty;
 logic [7:0]wdata,rdata;
 logic [7:0]data;
 
+logic [7:0]fifo[$];
+
+
 top #(WIDTH,DEPTH)u1(.*);
 
 
@@ -21,15 +24,25 @@ rst_n=1;
 
 
 fork
-repeat(40) begin
+repeat(50) begin
 if(!full)begin
-wdata=data;
-data=data+1;
+wdata=$random(data);
+fifo.push_back(wdata);
 end
 #10;
-
 end
-join
+join_none
+
+fork
+begin
+@(rdata)
+if(rdata!=fifo.pop_front()) begin
+$display("ERROR");
+$finish;
+end
+end
+join_none
+
 
 
 
@@ -38,7 +51,9 @@ end
 always #5 w_clk = ~w_clk;
 always #10 r_clk = ~r_clk;
 
-always #1500 $finish;
+always #1500 begin $display("SUCCESS");
+$finish;
+end
 
 initial begin
 $dumpfile("fifo.vcd");
