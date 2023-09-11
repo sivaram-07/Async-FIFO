@@ -12,7 +12,7 @@ output logic empty
 logic [$clog2(WIDTH):0]bin,binnext,graynext;
 logic emptyn;
 always_ff @(posedge r_clk or negedge rst_n)
-if(rst_n) begin
+if(~rst_n) begin
 rptr<='d0;
 bin<='d0;
 empty<=1;
