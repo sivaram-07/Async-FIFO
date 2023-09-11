@@ -9,7 +9,7 @@ output logic [$clog2(DEPTH):0]wptr,
 output logic full
 );
 
-logic [$clog2(WIDTH):0]bin,binnext,graynext;
+  logic [$clog2(DEPTH):0]bin,binnext,graynext;
 logic fulln;
 always_ff @(posedge w_clk or negedge rst_n)
 if(~rst_n) begin
