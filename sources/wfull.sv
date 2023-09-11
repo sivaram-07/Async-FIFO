@@ -24,10 +24,10 @@ full<=fulln;
 end
 
 always_comb begin
-  waddr=bin[$clog2(DEPTH)-1:0];
+waddr=bin[$clog2(DEPTH)-1:0];
 binnext=bin+(~full & wr_rq);
 graynext=(binnext>>1)^binnext;
-  fulln=(graynext=={~wsync_ptr2[$clog2(DEPTH):$clog2(DEPTH)-1],wsync_ptr2[$clog2(DEPTH)-2:0]});
+fulln=(graynext=={~wsync_ptr2[$clog2(DEPTH):$clog2(DEPTH)-1],wsync_ptr2[$clog2(DEPTH)-2:0]});
 end
 
 
